@@ -20,7 +20,8 @@ function App() {
   );
 
   async function onOpenFileClick() {
-    // TODO
+    const filePath = await window.electronAPI.openFile();
+    setImageUrl(filePath);
   }
 
   return (
@@ -65,7 +66,7 @@ function App() {
           </Container>
         </AppBar>
       </Box>
-      <Box sx={{ textAlign: "center" }}>
+      <Box sx={{ textAlign: "center" , height: "70%"}}>
         <ImageFilter
           image={imageUrl}
           alt="image to be styled"
